@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="footer">
+          <h1>Footer</h1>
+        </div>
+        <div id="main">
+          <p id="p1">I am first paragraph</p>
+          <p id="p2">I am second paragraph</p>
+          <p id="p3">I am last paragraph</p>
+        </div>
+        <div class="wrapperMagic">
+          <button class="changeColor" onclick="changeFooter()">
+              Изменить цвет последнего параграфа
+          </button>
+          <button id="switchTags" onclick="changeP()">
+              Поменять блоки местами
+          </button>
+      </div>
+  
+      <div id="traffic-signal">
+          <div id="red"></div>
+          <div id="yellow"></div>
+          <div id="green"></div>
+      </div>
+  
+        <div id="wrapper">
+          <table id="table">
+            <caption id="GFG">Эта таблица будет сгенерирована по нажатию кнопки</caption>
+          </table>
+          <button class="fillTable" onclick="fillTable()">Заполнить таблицу значениями</button>
+    
+        </div>
+    </div>
+   
+     
+      <script>
+
+          function changeFooter(){
+              document.getElementById("footer").style.backgroundColor = "lightblue";
+          }
+
+          function changeP() {
+            function swap(a,b){
+              var c = a.innerHTML;
+              a.innerHTML = b.innerHTML;
+              b.innerHTML = c;
+            }
+            let p1 = document.getElementById('p1');
+            let p2 = document.getElementById('p2');
+            let p3 = document.getElementById('p3');
+            let switchTags = document.getElementById('switchTags');
+            switchTags.onclick = swap(p1,p3);
+       
+    }
+
+          function fillTable(){
+              
+              let table = document.querySelector('#table');
+              const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+              
+              function fillTable(table, arr) {
+              for (let i = 0; i < arr.length; i++) {
+                let tr = document.createElement('tr');
+                
+                for (let j = 0; j < arr[i].length; j++) {
+                  let td = document.createElement('td');
+                  td.innerHTML = arr[i][j];
+                  tr.appendChild(td);
+                }
+                table.appendChild(tr);
+                }
+                
+              }
+              fillTable(table,arr);
+              document.getElementById("GFG").textContent="Таблица заполнена успешно";
+          }
+
+
+          function startTrafficSignal () {
+              var red=document.getElementById("red");
+              var yellow=document.getElementById("yellow");
+              var green=document.getElementById("green");
+              red.style.opacity=1;
+              setTimeout(function () {
+                  red.style.opacity=0.1;
+                  yellow.style.opacity=1;
+                  green.style.opacity=0.1;
+              },3000);
+  
+              setTimeout(function () {
+                  red.style.opacity=0.1;
+                  yellow.style.opacity=0.1;
+                  green.style.opacity=1;
+              },6000);
+  
+            setTimeout(function () {
+                red.style.opacity=1;
+                yellow.style.opacity=0.1;
+                green.style.opacity=0.1;
+            },9000);
+          }
+ 
+      var timer=setInterval(function () {
+          startTrafficSignal();
+      },9000);
+    
+      startTrafficSignal();
+        
+            
+      </script>
+</body>
+</html>
+
+

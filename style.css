@@ -1,0 +1,71 @@
+#wrapper{
+    background-color: aqua;
+    padding: 20px;
+    display: flex;
+   
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+#footer{
+    background-color: bisque;
+    width: 500px;
+    margin-bottom: 50px;
+}
+
+
+
+#main{
+    background-color: rgb(193, 166, 218);
+    width: 500px;
+}
+
+caption{
+
+  text-align: center;
+}
+
+table{
+  max-width: 300px;
+}
+table, th, td {
+    border: 1px solid black;
+  }
+
+  th, td {
+    padding: 15px;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  button{
+    margin-top: 20px;
+  }
+
+
+  #traffic-signal{
+    border: 8px solid black;
+    padding: 10px 3px;
+    width: 50px;
+    border-radius: 50px;
+}
+#traffic-signal > div{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: .3;
+}
+
+#green{
+    background-color: green;
+}
+#yellow{
+    background-color: yellow;
+}
+#red{
+    background-color: red;
+}
+
